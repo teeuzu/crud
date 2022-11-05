@@ -1,0 +1,9 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/6ee27323-90cf-43d5-b89b-e516e2b8513c/AppServices/subscriptions/6ee27323-90cf-43d5-b89b-e516e2b8513c/resourceGroups/BackEnd-1667590766412-rg/providers/Microsoft.Web/sites/Front-Consulta",
+    "appService.deploySubpath": "dist/consulta-medica",
+    "appService.showBuildDuringDeployPrompt": false
+}

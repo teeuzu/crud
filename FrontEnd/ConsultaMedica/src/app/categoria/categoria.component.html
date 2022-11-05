@@ -1,0 +1,93 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Planos</h1>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CadastrarPlano">
+      Novo
+    </button>
+</div>
+<div class="row">             
+    <div class="">
+        <div class="card shadow ">
+            <div>
+                <table class="table table-sm m-2">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let categoria of categorias">
+                        <td>{{categoria.id}}</td>
+                        <td>{{categoria.nome}}</td>
+                        <td>
+                          <button type="button" class="btn-sm btn btn-dark" (click)="editarCategoria(categoria)" data-toggle="modal" data-target="#editarPlano">
+                              Editar
+                          </button>
+                          <button class="m-1 btn-sm btn btn-danger" (click)="excluirCategoria(categoria.id)">
+                            Excluir
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="CadastrarPlano" tabindex="-1" role="dialog" aria-labelledby="CadastrarPlano" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Plano de saúde</h5>
+        <button type="button" class="btn-close" data-dismiss="modal">
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            
+            <div class="col">
+              <input type="text" name="name" class="form-control" placeholder="Nome" [(ngModel)]="categoria.nome">
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="voltar" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-primary" (click)="cadastrarCategoria()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Editar -->
+<div class="modal fade" id="editarPlano" tabindex="-1" role="dialog"   aria-labelledby="editarPlano" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar Plano</h5>
+        <button type="button" class="btn-close" data-dismiss="modal">
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            
+            <div class="col">
+              <input type="text" name="name" class="form-control" placeholder="Nome" [(ngModel)]="categoria.nome">
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="voltar" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-primary" >Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
